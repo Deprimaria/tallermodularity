@@ -16,8 +16,16 @@ public class Date_Beauty {
 		c.set(Calendar.YEAR,y);
     	c.set(Calendar.MONTH,m-1);
     	int dt = c.getActualMaximum(Calendar.DATE);
-
-		int dtm = dt == 31 ? 31 : dt == 30 ? 30 : c.isLeapYear(y) ? 29 : 28;
+		int dtm = -1;
+		if(dt == 31) {
+			dtm = 31
+		} else if (dt == 30) {
+			dtm = 30;
+		} else if(c.isLeapYear(y)) {
+			dtm = 29;
+	    } else {
+	    	dtm = 28;
+	    }
 
 		d += 1;
 		if(d > dtm){
@@ -26,7 +34,7 @@ public class Date_Beauty {
 		}
 		if(m <= 11)
 			return;
-		m = 0; 
+		m = 0;
 		y += 1;
 	}
 }
