@@ -1,4 +1,4 @@
-public class Date_Beauty {
+public class Date_Beast {
 	private int d; // 1 <= day <= days in month
 	private int m; // 1 <= month <= 12
 	private int y;
