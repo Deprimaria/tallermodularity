@@ -26,7 +26,7 @@ public class Date_Beauty {
 		}
 		if(m <= 11)
 			return;
-		m = 0;
+		m = 0; 
 		y += 1;
 	}
 }
