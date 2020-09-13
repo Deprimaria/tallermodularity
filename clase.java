@@ -1,3 +1,5 @@
+import java.util.GregorianCalendar;
+
 public class Date_Beauty {
 	private int d; // 1 <= day <= days in month
 	private int m; // 1 <= month <= 12
