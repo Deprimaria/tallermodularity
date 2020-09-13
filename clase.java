@@ -1,5 +1,3 @@
-import java.util.GregorianCalendar;
-
 public class Date_Beauty {
 	private int d; // 1 <= day <= days in month
 	private int m; // 1 <= month <= 12
@@ -12,29 +10,16 @@ public class Date_Beauty {
 	}
 
 	public void setToNextDay() {
-		GregorianCalendar c = new GregorianCalendar();
-		c.set(Calendar.YEAR,y);
-    	c.set(Calendar.MONTH,m-1);
-    	int dt = c.getActualMaximum(Calendar.DATE);
-		int dtm = -1;
-		if(dt == 31) {
-			dtm = 31
-		} else if (dt == 30) {
-			dtm = 30;
-		} else if(c.isLeapYear(y)) {
-			dtm = 29;
-	    } else {
-	    	dtm = 28;
-	    }
+		int dtm = m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12 ? 31 : m == 4 || m == 6 || m == 9 || m == 11 ? 30 : (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0) ? 29 : 28;
 
 		d += 1;
 		if(d > dtm){
 			d = 1;
 			m += 1;
 		}
-		if(m <= 11)
+		if(m <= 12)
 			return;
-		m = 0;
+		m = 1;
 		y += 1;
 	}
 }
